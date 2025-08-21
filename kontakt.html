@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>🦐 Contact Us</title>
+    <link rel="stylesheet" href="indexstyle.css" />
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo" class="logo" />
+        <nav>
+            <ul>
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="devlog.html">Devlog</a></li>
+                <li><a href="hotfix.html">Hotfixy</a></li>
+                <li><a href="plan.html">Plany</a></li>
+                <li><a href="postacie.html">Postacie</a></li>
+                <li><a href="propozycje.html">Propozycje</a></li>
+                <li><a href="kontakt.html" class="active">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="contact">
+            <h1>Kontakt</h1>
+            <p class="intro">Skontaktuj się z nami na Discordzie!</p>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <img src="discord.png" class="discord-logo" />
+                    <h2>filip</h2>
+                    <p class="discord-nick" id="nick1">filipthefilip</p>
+                    <button onclick="copyNick('nick1')">🎲 Kopiuj nick</button>
+                </div>
+                <div class="contact-card">
+                    <img src="discord.png" class="discord-logo" />
+                    <h2>𝖑𝖘𝖈𝖊𝖔 𝖋𝖎𝖘𝖍</h2>
+                    <p class="discord-nick" id="nick2">polishfishh</p>
+                    <button onclick="copyNick('nick2')">🎲 Kopiuj nick</button>
+                </div>
+                <div class="contact-card">
+                    <img src="discord.png" class="discord-logo" />
+                    <h2>Kimkolwiekk</h2>
+                    <p class="discord-nick" id="nick3">kimkolwiek_</p>
+                    <button onclick="copyNick('nick3')">🎲 Kopiuj nick</button>
+                </div>
+                <div class="contact-card">
+                    <img src="discord.png" class="discord-logo" />
+                    <h2>𝖉𝖌𝖈𝖊𝖔 𝖘𝖜𝖆𝖌</h2>
+                    <p class="discord-nick" id="nick4">swagslav</p>
+                    <button onclick="copyNick('nick4')">🎲 Kopiuj nick</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        &copy; 2025 Imperium Krewetek. All rights reserved.
+    </footer>
+    <script>
+        function copyNick(elementId) {
+            const nick = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(nick).then(() => {
+                alert("Skopiowano " + nick + ".");
+            }).catch(err => {
+                console.error("Błąd kopiowania " + nick + ".");
+            });
+        }
+    </script>
+</body>
+</html>

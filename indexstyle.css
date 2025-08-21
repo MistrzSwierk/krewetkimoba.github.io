@@ -1,0 +1,440 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --deep-ocean-blue: #0d1b2a;
+    --shrimp-orange: #ff7f50;
+    --white: #f9f9f9;
+    --selected-orange: #f1c764;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: var(--deep-ocean-blue);
+    color: var(--white);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--deep-ocean-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header img.logo {
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 500;
+    transition: color 0.3s, border-bottom 0.3s;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+}
+
+nav ul li a.active {
+    color: var(--selected-orange);
+}
+
+nav ul li a:hover {
+    color: var(--shrimp-orange);
+    border-bottom: 2px solid var(--shrimp-orange);
+}
+
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    margin-bottom: 4rem;
+}
+
+h1, h2 {
+    color: var(--shrimp-orange);
+    margin-bottom: 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #0b1622;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.hero {
+    text-align: center;
+    padding: 6rem 2rem;
+    background: linear-gradient(
+        rgba(13, 27, 42, 0.8), rgba(13, 27, 42, 0.8));
+    border-radius: 1rem;
+    margin-bottom: 3rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: var(--shrimp-orange);
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--white);
+}
+
+.about {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.team {
+    text-align: center;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180x, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.member {
+    background: #0b1622;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+
+.member h3 {
+    margin-bottom: 0.5rem;
+    color: var(--shrimp-orange);
+}
+
+.devlog {
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem;
+}
+
+.devlog h1 {
+    color: var(--shrimp-orange);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.devlog .intro {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #ddd;
+}
+
+.devlog-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.entry {
+    background: #0b1622;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-left: 4px solid var(--shrimp-orange);
+}
+
+.entry:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+.entry h2 {
+    margin-bottom: 0.8rem;
+    color: var(--shrimp-orange);
+    font-size: 1.2rem;
+}
+
+.entry p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.hotifxes {
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem;
+}
+
+.hotfixes h1 {
+    color: var(--shrimp-orange);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.hotfixes .intro {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #ddd;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+    padding-left: 2rem;
+    border-left: 3px solid var(--shrimp-orange);
+}
+
+.hotfix {
+    position: relative;
+    padding-left: 1rem;
+}
+
+.hotfix::before {
+    content: "";
+    position: absolute;
+    left: -1.15rem;
+    top: 0.5rem;
+    width: 16px;
+    height: 16px;
+    background: var(--shrimp-orange);
+    border-radius: 50%;
+}
+
+.hotfix .date {
+    font-size: 0.9rem;
+    color: #bbb;
+    margin-bottom: 0.3rem;
+}
+
+.hotfix .content {
+    background: #0b1622;
+    padding: 1rem 1.5rem;
+    border-radius: 0.8rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hotifx .content:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+}
+
+.hotfix h2 {
+    margin-bottom: 0.5rem;
+    color: var(--shrimp-orange);
+    font-size: 1.1rem;
+}
+
+.hotfix p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.plans {
+    max-width: 800px;
+    margin: auto;
+    padding: 2rem;
+}
+
+.plans h1 {
+    color: var(--shrimp-orange);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.plans .intro {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #ddd;
+}
+
+.plans-list {
+    list-style: none;
+    padding: 0;
+    font-size: 1.1rem;
+    line-height: 2;
+}
+
+.plans-list li {
+    background: #0b1622;
+    margin-bottom: 0.8rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.8rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-left: 4px solid var(--shrimp-orange);
+}
+
+.plans-list li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+.characters {
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem;
+}
+
+.characters h1 {
+    color: var(--shrimp-orange);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.characters .intro {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #ddd;
+}
+
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.character-card {
+    background: #0b1622;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid transparent;
+}
+
+.character-card:hover {
+    transform: translateY(-5px);
+    border: 2px solid var(--shrimp-orange);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+
+.character-card icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.character-card h2 {
+    color: var(--shrimp-orange);
+    margin-bottom: 0.5rem;
+}
+
+.character-card p {
+    font-size: 0.95rem;
+    color: #ddd;
+}
+
+.contact {
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem;
+}
+
+.contact h1 {
+    color: var(--shrimp-orange);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.contact .intro {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #ddd;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minman(250px, 1fr));
+    gap: 2rem;
+}
+
+.contact-card {
+    background: #0b1622;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: transform 0.3s, border 0.3s, box-shadow 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    border: 2px solid var(--shrimp-orange);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+
+.discord-logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+}
+
+.contact-card h2 {
+    color: var(--shrimp-orange);
+    margin-bottom: 0.5rem;
+}
+
+.discord-nick {
+    font-family: monospace;
+    background: #111a28;
+    padding: 0.5rem 0.8rem;
+    border-radius: 0.4rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.contact-card button {
+    background: linear-gradient(135deg, var(--shrimp-orange), #ff9966);
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1.4rem;
+    border-radius: 0.6rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.contact-card button:hover {
+    background: linear-gradient(135deg, #ff9966, var(--shrimp-orange));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
+
+.contact-card button:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.4);
+}
